@@ -3,7 +3,6 @@ import {StyleSheet, Text, View, Image} from "react-native";
 import { Button} from "react-native-paper";
 import Icon from 'react-native-vector-icons/AntDesign';
 
-
 export default props=>{
     return(
         <View>
@@ -12,8 +11,20 @@ export default props=>{
             display:'flex',
             fontSize:25,
            }}> Welcome Black </Text>
-           <Text>Sign in to Continue</Text>
+           <Text>Sign up to Continue</Text>
 
+            <View>
+                <Image style={styles.name} source={require('../Imagens/pessoa.png')}/>
+                <Text style={{
+                    
+                        height: 40,
+                        margin: 12,
+                        borderWidth: 1,
+                        padding: 10,
+                    
+                }}>Name</Text>
+
+            </View>
             <View>
                 <Image style={styles.email} source={require('../Imagens/email.png')}/>
                 <Text style={{
@@ -38,13 +49,37 @@ export default props=>{
             }}>Password</Text>
             </View>
 
-            <Button style={{
+            <Button style ={{
                     backgroundColor:'#10439F',
                     margin:20
-                }}onPress={()=> props.navigation.navigate('WelcomeContinue')} textColor="white">
+                }}onPress={()=> props.navigation.navigate('Welcome1')} textColor="white">
                     Sign in        
 
                 </Button>
+
+                <View>
+                   
+
+                <Button style={{
+                    backgroundColor:'#CAF4FF',
+                    margin:20
+                }}>
+                    Sign in with   
+                    {<Icon name="facebook-square" size={20} />}
+                 
+
+                </Button>
+                <Button style={{
+                    backgroundColor:'#CAF4FF',                    
+                    margin:20,
+                  
+                    }}>
+                    Sign in with   
+                    
+                    {<Icon name="google" size={20} />}
+
+                </Button>
+                </View>
 
                 <View>
                     <Text style={{
@@ -57,33 +92,11 @@ export default props=>{
 
                     }}> OR</Text>
 
-            <Button style={{
-                    backgroundColor:'#CAF4FF',                    
-                    margin:20,
-                    
-                }}>
-                    Sign in with   
-                    {<Icon name="facebook-square" size={20} />}
-                  
-
-                </Button>
-                <Button style={{
-                    backgroundColor:'#CAF4FF',
-                    margin:20,
-                  
-                    
-                }}>
-                    Sign in with         
-                    
-                    {<Icon name="google" size={20} />}
-
-                </Button>
+            
                 </View>
-
                 <View>
-                    <Text>Don't have an account? SIGN UP</Text>
+                    <Text>Already have an account? SIGN UP</Text>
                 </View>
-
 
         </View>
     )
@@ -103,11 +116,22 @@ const styles = StyleSheet.create({
         padding: 10,
 
     },
+    name:{
+        height: 5,
+        margin:5,
+        padding: 10,
+
+    },
     imagem:{
         height: 5,
         margin:5,
         padding: 10,
 
+    },
+    button:{
+        flex: 1,
+        justifyContent: "space-between",
+        flexDirection: "row"
     }
     
     
